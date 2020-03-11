@@ -28,11 +28,11 @@ def click(event):
     cub = (((event.x - x) ** 2) + ((event.y - y) ** 2)) ** 0.5
     if cub <= r:
         score += 1
-        canv.create_text(800, 600, text=score,
-                         anchor=SE, font="Times 14")
         print(score)
 
 
 new_ball()
+canv.create_text(200, 200, text='pidor',
+                 font="Verdana 14")
 canv.bind('<Button-1>', click)
 mainloop()
