@@ -29,7 +29,6 @@ def click(event):
     if cub <= r:
         score += 1
         print(score)
-		print("Suck my dick")
 
 
 new_ball()
