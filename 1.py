@@ -20,7 +20,8 @@ def new_ball():
     y = rnd(100, 500)
     r = rnd(30, 50)
     canv.create_oval(x-r, y-r, x+r, y+r, fill=choice(colors), width=0)
-    root.after(1000, new_ball)
+    canv.create_text(800, 600, text=score,
+                     font='Verdana 14', anchor=SE)
 
 
 def click(event):
@@ -28,11 +29,12 @@ def click(event):
     cub = (((event.x - x) ** 2) + ((event.y - y) ** 2)) ** 0.5
     if cub <= r:
         score += 1
-        print(score)
+    print(score)
+    new_ball()
 
 
 new_ball()
 canv.create_text(200, 200, text='pidor',
                  font="Verdana 14")
 canv.bind('<Button-1>', click)
-mainloop()
+root.mainloop()
